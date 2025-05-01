@@ -1,0 +1,27 @@
+# Folder dependensi Node.js
+node_modules/
+
+# File Environment Variables (Sangat Penting!)
+.env
+.env.*
+!.env.example
+
+# Folder hasil build Vite
+/dist
+# Jika pakai create-react-app: /build
+
+# Log file npm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Log file umum (jika ada)
+*.log
+
+# File sistem operasi
+.DS_Store
+Thumbs.db
+
+# File konfigurasi editor/IDE (opsional)
+# .vscode/
+# .idea/
