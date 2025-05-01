@@ -1,10 +1,16 @@
 {
   "rewrites": [
     {
-      "source": "/pingbackend",
-      "destination": "https://urldikit-backend-production.up.railway.app/"
+      // === PERUBAHAN SOURCE REGEX ===
+      // Tangkap 1 atau lebih karakter valid ([a-zA-Z0-9_-]+)
+      // yang ada di akhir path ($) setelah garis miring (/)
+      "source": "/([a-zA-Z0-9_-]+)$",
+      // ===========================
+      // Pastikan URL backend ini sudah benar!
+      "destination": "https://urldikit-backend-production.up.railway.app/$1"
     },
     {
+      // Aturan SPA fallback (tetap sama, lebih baik dari yang /.*)
       "source": "/:path((?!.*\\.).*)",
       "destination": "/index.html"
     }
