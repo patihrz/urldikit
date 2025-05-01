@@ -1,8 +1,12 @@
 {
-    "rewrites": [
-      {
-        "source": "/((?!api/|_next/|favicon.ico|assets/).*)",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "rewrites": [
+    {
+      "source": "/([a-zA-Z0-9_-]{7})$",
+      "destination": "https://urldikit-backend-production.up.railway.app/$1"
+    },
+    {
+      "source": "/((?!api/|_next/|favicon.ico|assets/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
