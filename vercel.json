@@ -1,8 +1,12 @@
 {
   "rewrites": [
     {
-      "source": "/(.+)",
+      "source": "/([a-zA-Z0-9_-]{7})$",
       "destination": "https://urldikit-backend-production.up.railway.app/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
