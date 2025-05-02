@@ -1,26 +1,25 @@
-import React, { useState } from 'react'; // Hapus useEffect
-import { Link /* Hapus useLocation */ } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Hanya perlu Link
 import { motion, AnimatePresence } from 'framer-motion';
-// Hapus LogIn, LayoutDashboard jika tidak dipakai lagi
-import { Menu, X /*, BarChart*/ } from 'lucide-react'; // BarChart juga opsional
+import { Menu, X /*, BarChart*/ } from 'lucide-react'; // Ikon dasar navbar
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  // Hapus state isLoggedIn dan useEffect untuk cek login
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const location = useLocation();
-  // useEffect(() => { ... }, [location.pathname]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
   // Varian animasi mobile menu (tidak berubah)
-  const menuVariants = { /* ... */ };
+  const menuVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.2 } },
+    exit: { opacity: 0, y: -20, transition: { duration: 0.2 } }
+   };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16"> {/* Sesuaikan h-16 jika perlu karena logo */}
+        <div className="flex items-center justify-between h-16"> {/* Sesuaikan h-16 jika perlu */}
 
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -41,17 +40,18 @@ function Navbar() {
                 Home
               </Link>
 
-              {/* Link Stats */}
+              {/* Link Stats (Path Diperbarui) */}
               <Link
-                to="/stats"
+                to="/pages/stats" // <-- PERUBAHAN PATH
                 className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 onClick={closeMenu}
               >
                  Stats
               </Link>
 
+               {/* Link About (Path Diperbarui) */}
               <Link
-                to="/about"
+                to="/pages/about" // <-- PERUBAHAN PATH
                 className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 onClick={closeMenu}
               >
@@ -65,7 +65,7 @@ function Navbar() {
           <div className="-mr-2 flex md:hidden">
              <button onClick={toggleMenu} type="button" className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded={isOpen}>
                <span className="sr-only">Buka menu utama</span>
-               {isOpen ? (<X className="block h-6 w-6" />) : (<Menu className="block h-6 w-6" />)}
+               {isOpen ? (<X className="block h-6 w-6" aria-hidden="true" />) : (<Menu className="block h-6 w-6" aria-hidden="true" />)}
              </button>
           </div>
 
@@ -80,21 +80,22 @@ function Navbar() {
               {/* Link Home Mobile */}
               <Link to="/" className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors" onClick={closeMenu}> Home </Link>
 
-              {/* Link Stats Mobile */}
+              {/* Link Stats Mobile (Path Diperbarui) */}
               <Link
-                to="/stats"
+                to="/pages/stats" // <-- PERUBAHAN PATH
                 className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors"
                 onClick={closeMenu}
               >
                  Stats
               </Link>
 
+              {/* Link About Mobile (Path Diperbarui) */}
               <Link
-                    to="/about"
-                    className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors"
-                    onClick={closeMenu}
-                  >
-                     About
+                to="/pages/about" // <-- PERUBAHAN PATH
+                className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                onClick={closeMenu}
+              >
+                 About
               </Link>
 
             </div>
