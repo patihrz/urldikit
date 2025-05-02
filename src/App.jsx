@@ -14,7 +14,12 @@ import PrivacyPage from './pages/PrivacyPage';
 import ContactPage from './pages/ContactPage';
 import StatsPage from './pages/StatsPage';
 import AboutPage from './pages/AboutPage';
+
 //import NotFoundPage from './pages/NotFoundPage';
+
+import HowToUsePage from './pages/HowToUsePage';
+// import NotFoundPage from './pages/NotFoundPage'; // Jika Anda membuat halaman 404 custom
+
 
 // Komponen Layout: Struktur umum halaman
 function Layout() {
@@ -36,8 +41,7 @@ function Layout() {
           <a href="/pages/terms" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">Terms of Service</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
           <a href="/pages/privacy" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">Privacy Policy</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
           <a href="/pages/contact" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">Contact</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
-          <a href="/pages/stats" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">Check Stats</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
-          <a href="/pages/about" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">About</a>
+          <a href="/pages/how-to-use" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">How To Use</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
         </div>
         <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
           &copy; {new Date().getFullYear()} urlDikit. All Rights Reserved.
@@ -66,6 +70,8 @@ function App() {
         <Route path="pages/contact" element={<ContactPage />} />   {/* path: /pages/contact */}
         <Route path="pages/stats" element={<StatsPage />} />     {/* path: /pages/stats */}
         <Route path="pages/about" element={<AboutPage />} />     {/* path: /pages/about */}
+
+        <Route path="pages/how-to-use" element={<HowToUsePage />} />
 
         {/* Rute Admin (Tetap tanpa /pages/ agar mudah diakses) */}
         <Route path="admin/login" element={<AdminLoginPage />} /> {/* path: /admin/login */}
