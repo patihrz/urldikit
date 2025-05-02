@@ -102,7 +102,7 @@ function UrlForm({ onShortenSuccess, onLoading, isLoading }) {
           value={customAlias}
           onChange={(e) => setCustomAlias(e.target.value)}
           // === PERUBAHAN DI SINI ===
-          placeholder="Custom alias (optional, 6-10 chars)" // Update placeholder
+          placeholder="Custom alias (optional, 7 chars)" // Update placeholder
           pattern="^[a-zA-Z0-9_\-]{6,10}$" // Update panjang {6,10} dan escape hyphen
           title="Use 6-10 alphanumeric characters, underscores, or dashes." // Update tooltip
           // ==========================
