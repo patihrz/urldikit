@@ -1,13 +1,48 @@
 <!doctype html>
-<html lang="en">
+<html lang="id"> {/* <--- Ganti bahasa ke 'id' jika target utama Indonesia */}
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/assets/logo.png" />
+
+    {/* Favicon (Ikon Tab Browser) - Pastikan path ke logo Anda benar */}
+    <link rel="icon" type="image/png" href="/assets/logo.png" />
+    {/* Tambahkan ikon lain jika perlu (misal untuk Apple) */}
+    {/* <link rel="apple-touch-icon" href="/apple-touch-icon.png" /> */}
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+
+    {/* === SEO & Metadata === */}
+
+    {/* Judul Halaman (PENTING untuk SEO & Tab Browser) */}
+    <title>urlDikit - Pemendek URL Simpel & Cepat</title> {/* <-- GANTI JUDUL */}
+
+    {/* Deskripsi Singkat (Muncul di hasil pencarian Google) */}
+    <meta name="description" content="Pendekkan URL panjang dengan mudah dan cepat menggunakan urlDikit. Buat link kustom, lacak statistik klik. Gratis dan simpel." /> {/* <-- TAMBAHKAN DESKRIPSI */}
+
+    {/* Keywords (Kurang berpengaruh untuk Google, tapi tidak ada salahnya) */}
+    <meta name="keywords" content="url shortener, pemendek url, link shortener, url dikit, perpendek link, url custom, link custom, gratis" /> {/* <-- TAMBAHKAN KEYWORDS (Opsional) */}
+
+    {/* Canonical URL (Menunjukkan URL utama jika ada duplikat) */}
+    <link rel="canonical" href="https://urldikit.my.id/" /> {/* <-- URL Domain Utama Anda */}
+
+    {/* Open Graph Tags (Untuk preview saat share ke Facebook, LinkedIn, dll.) */}
+    <meta property="og:title" content="urlDikit - Pemendek URL Simpel & Cepat" />
+    <meta property="og:description" content="Pendekkan URL panjang dengan mudah dan cepat menggunakan urlDikit." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://urldikit.my.id/" /> {/* <-- URL Domain Utama Anda */}
+    {/* Ganti dengan URL gambar logo Anda jika ingin ada gambar di preview */}
+    <meta property="og:image" content="https://urldikit.my.id/assets/logo.png" /> {/* <-- URL Lengkap ke Logo Anda */}
+
+    {/* Twitter Card Tags (Untuk preview saat share ke Twitter) */}
+    <meta name="twitter:card" content="summary" /> {/* atau summary_large_image jika gambar besar */}
+    <meta name="twitter:title" content="urlDikit - Pemendek URL Simpel & Cepat" />
+    <meta name="twitter:description" content="Pendekkan URL panjang dengan mudah dan cepat menggunakan urlDikit." />
+    <meta name="twitter:image" content="https://urldikit.my.id/assets/logo.png" /> {/* <-- URL Lengkap ke Logo Anda */}
+
+    {/* --- Akhir Bagian SEO --- */}
+
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div id="root"></div> {/* JANGAN UBAH BAGIAN INI */}
+    <script type="module" src="/src/main.jsx"></script> {/* JANGAN UBAH BAGIAN INI */}
   </body>
 </html>
