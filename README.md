@@ -3,7 +3,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 A full-stack URL shortener application built with the MERN stack (MySQL instead of MongoDB) + Vite + Tailwind CSS, featuring custom aliases, click statistics, admin management, and more. Deployed with a separate frontend (Vercel) and backend (Railway).
 
-**Live Demo:** [urldikit.my.id](https://urldikit.my.id) ---
+**Live Demo:** [urldikit.my.id](https://urldikit.my.id) 
+
+![Untitled design](https://github.com/user-attachments/assets/0fc581ee-8a8c-4434-b673-b6d595d98885)
+
+---
 
 ## 📖 Tentang Proyek
 
