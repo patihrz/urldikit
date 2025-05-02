@@ -14,7 +14,7 @@ import PrivacyPage from './pages/PrivacyPage';
 import ContactPage from './pages/ContactPage';
 import StatsPage from './pages/StatsPage';
 import AboutPage from './pages/AboutPage';
-// import NotFoundPage from './pages/NotFoundPage'; // Jika Anda membuat halaman 404 custom
+import NotFoundPage from './pages/NotFoundPage';
 
 // Komponen Layout: Struktur umum halaman
 function Layout() {
