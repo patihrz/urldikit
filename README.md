@@ -1,12 +1,57 @@
-# React + Vite
+# urlDikit - Simple & Fast URL Shortener
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+A full-stack URL shortener application built with the MERN stack (MySQL instead of MongoDB) + Vite + Tailwind CSS, featuring custom aliases, click statistics, admin management, and more. Deployed with a separate frontend (Vercel) and backend (Railway).
 
-Currently, two official plugins are available:
+**Live Demo:** [urldikit.my.id](https://urldikit.my.id) ---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📖 Tentang Proyek
 
-## Expanding the ESLint configuration
+`urlDikit` adalah layanan pemendek URL yang memungkinkan pengguna mengubah alamat web yang panjang menjadi link pendek yang ringkas dan mudah dibagikan. Proyek ini dibangun sebagai demonstrasi pengembangan aplikasi web full-stack modern, mencakup frontend interaktif, backend API, manajemen database, dan proses deployment.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Fitur Utama
+
+* Pemendekan URL (Random & Alias Kustom 6-10 Karakter).
+* Penanganan URL Duplikat.
+* Redirect Cepat & Penghitungan Klik Dasar.
+* QR Code Generator.
+* Halaman Statistik Klik per Link.
+* Pelaporan URL Berbahaya (Form + Simpan ke DB).
+* Area Admin Dasar (Login, Lihat Laporan, Hapus Link + Update Status Report, Logout).
+* Proteksi Route Admin (Frontend).
+* Halaman Statis (Terms, Privacy, Contact, About).
+* Desain Responsif.
+* Navbar & Footer.
+* Keamanan Dasar Backend (Helmet, Rate Limit, Parameterized Query).
+
+## 🛠️ Teknologi yang Digunakan
+
+* **Frontend:** React (Vite), React Router DOM, Tailwind CSS, Framer Motion, Axios, Lucide React, qrcode.react, react-hot-toast.
+* **Backend:** Node.js, Express.js, MySQL2, bcrypt, nanoid@3 (CommonJS), cors, dotenv, helmet, express-rate-limit, validator.
+* **Database:** MySQL.
+* **Deployment:** Frontend di Vercel, Backend di Railway, Database di Railway MySQL / PlanetScale ().
+
+## ☁️ Deployment
+
+* **Frontend:** Dideploy ke [Vercel](https://vercel.com/) dari branch `master`/`main`. Live di: [https://urldikit.my.id](https://urldikit.my.id) * **Backend:** Dideploy ke [Railway](https://railway.app/) dari branch `master`/`main`.
+* **Database:** Menggunakan [Railway MySQL](https://railway.app/) / [PlanetScale](https://planetscale.com/) ().
+
+Environment variables production diatur langsung di dashboard Railway dan Vercel.
+
+## 🔐 Catatan Keamanan
+
+* Fitur login admin saat ini menggunakan metode sederhana (hash di `.env`) dan **belum menggunakan** otentikasi berbasis Token (JWT/Session) yang aman.
+* Endpoint API admin (`/api/admin/*`) di backend **belum diproteksi** dengan middleware otorisasi.
+* Pengamanan dasar (`helmet`, `rate-limit`, parameterized query) sudah diterapkan.
+
+## 🔮 Rencana Pengembangan (Opsional)
+
+* Implementasi otentikasi JWT & proteksi backend API admin.
+* Fitur Expiration Date.
+* Fitur admin: Edit link, Mark report as reviewed.
+* User accounts.
+* Unit/Integration Testing.
+
+## 👤 Kontak
+
+Dibuat oleh [Patih Ramadika] - [[Linkedin](https://www.linkedin.com/in/patih-ramadika-19b763217/)]
