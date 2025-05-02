@@ -53,14 +53,14 @@ function App() {
     <Routes>
       {/* Rute Induk menggunakan Layout */}
       <Route path="/" element={<Layout />}>
-      <Route path="terms" element={<TermsPage />} />
-      <Route path="privacy" element={<PrivacyPage />} />
-      <Route path="contact" element={<ContactPage />} />
-      <Route path="stats" element={<StatsPage />} />
-      <Route path="about" element={<AboutPage />} />
+      <Route path="/pages/terms" element={<TermsPage />} />
+      <Route path="pages/privacy" element={<PrivacyPage />} />
+      <Route path="pages/contact" element={<ContactPage />} />
+      <Route path="pages/stats" element={<StatsPage />} />
+      <Route path="pages/about" element={<AboutPage />} />
         {/* Rute Anak (dirender di dalam <Outlet> Layout) */}
         <Route index element={<HomePage />} /> {/* Halaman utama */}
-        <Route path="report" element={<ReportPage />} /> {/* Halaman report */}
+        <Route path="/pages/report" element={<ReportPage />} /> {/* Halaman report */}
         <Route path="admin/login" element={<AdminLoginPage />} /> {/* Halaman login admin */}
 
         {/* Halaman Admin Dashboard (dilindungi) */}
