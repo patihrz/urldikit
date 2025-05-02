@@ -15,7 +15,7 @@ import ContactPage from './pages/ContactPage';
 import StatsPage from './pages/StatsPage';
 import AboutPage from './pages/AboutPage';
 
-//import NotFoundPage from './pages/NotFoundPage';
+import PartnershipPage from './pages/PartnershipPage';
 
 import HowToUsePage from './pages/HowToUsePage';
 // import NotFoundPage from './pages/NotFoundPage'; // Jika Anda membuat halaman 404 custom
@@ -70,9 +70,8 @@ function App() {
         <Route path="pages/contact" element={<ContactPage />} />   {/* path: /pages/contact */}
         <Route path="pages/stats" element={<StatsPage />} />     {/* path: /pages/stats */}
         <Route path="pages/about" element={<AboutPage />} />     {/* path: /pages/about */}
-
         <Route path="pages/how-to-use" element={<HowToUsePage />} />
-
+        <Route path="pages/partnership" element={<PartnershipPage />} />
         {/* Rute Admin (Tetap tanpa /pages/ agar mudah diakses) */}
         <Route path="admin/login" element={<AdminLoginPage />} /> {/* path: /admin/login */}
         <Route

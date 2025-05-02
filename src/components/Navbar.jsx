@@ -58,6 +58,13 @@ function Navbar() {
                  About
               </Link>
 
+              <Link
+                to="/pages/partnership"
+                className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                onClick={closeMenu}
+              >
+                 Partnership
+              </Link>
             </div>
           </div>
 
@@ -98,6 +105,13 @@ function Navbar() {
                  About
               </Link>
 
+              <Link
+                to="/pages/partnership"
+                className="text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-colors"
+                onClick={closeMenu}
+              >
+                 Partnership
+              </Link>
             </div>
           </motion.div>
         )}
