@@ -1,14 +1,11 @@
 {
   "rewrites": [
     {
-
-      "source": "/([a-zA-Z0-9_-]{7})",
-
+      "source": "^/(?!(?:report|terms|privacy|contact|stats|about|admin|api|assets|favicon\\.ico|logo\\.png|vite\\.svg)$)(?!.*\\.)([a-zA-Z0-9_-]{6,10})$",
       "destination": "https://urldikit-backend-production.up.railway.app/$1"
     },
     {
-
-      "source": "/:path((?!.*\\.).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
