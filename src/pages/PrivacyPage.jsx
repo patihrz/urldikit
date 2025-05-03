@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 function PrivacyPage() {
   // Anda bisa ganti tanggal ini
   const lastUpdated = "1 Mei 2025";
-  const serviceName = "urlDikit"; // Nama layanan Anda
-  const contactEmail = "[Alamat Email Kontak Anda]"; // Ganti dengan email kontak Anda
+  const serviceName = "urlDikit";
+  const contactEmail = "patihrmdk@gmail.com";
 
   return (
     <motion.div
