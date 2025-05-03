@@ -30,7 +30,7 @@ function TermsPage() {
       <section className="mb-6">
         <h2 className="text-2xl font-semibold mb-3">1. Pendahuluan</h2>
         <p className="mb-3">
-          Selamat datang di urlDikit (selanjutnya disebut "Layanan"), layanan pemendek URL yang disediakan oleh [Nama Anda/Perusahaan Anda]. Dengan mengakses atau menggunakan Layanan kami, Anda setuju untuk terikat oleh Ketentuan Layanan ini ("Ketentuan"). Jika Anda tidak setuju dengan bagian mana pun dari ketentuan ini, Anda tidak diizinkan untuk menggunakan Layanan.
+          Selamat datang di urlDikit (selanjutnya disebut "Layanan"), layanan pemendek URL yang disediakan oleh urlDikit. Dengan mengakses atau menggunakan Layanan kami, Anda setuju untuk terikat oleh Ketentuan Layanan ini ("Ketentuan"). Jika Anda tidak setuju dengan bagian mana pun dari ketentuan ini, Anda tidak diizinkan untuk menggunakan Layanan.
         </p>
       </section>
 
@@ -68,7 +68,7 @@ function TermsPage() {
       <section className="mb-6">
         <h2 className="text-2xl font-semibold mb-3">5. Batasan Tanggung Jawab</h2>
         <p className="mb-3">
-          Layanan disediakan "sebagaimana adanya" tanpa jaminan apa pun. [Nama Anda/Perusahaan Anda] tidak akan bertanggung jawab atas kerugian atau kerusakan apa pun yang timbul dari penggunaan Anda atas Layanan.
+          Layanan disediakan "sebagaimana adanya" tanpa jaminan apa pun. urlDikit tidak akan bertanggung jawab atas kerugian atau kerusakan apa pun yang timbul dari penggunaan Anda atas Layanan.
         </p>
       </section>
 
