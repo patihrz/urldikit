@@ -44,7 +44,7 @@ function Layout() {
           <a href="/pages/how-to-use" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">How To Use</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
         </div>
         <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
-          &copy; {new Date().getFullYear()} urlDikit. All Rights Reserved.
+          &copy; {new Date().getFullYear()} urlDikit. | V 1.0.
         </p>
       </footer>
     </div>
