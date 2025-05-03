@@ -129,13 +129,7 @@ function PrivacyPage() {
         id: 8, title: "8. Perubahan Kebijakan Privasi", content: (
              <p>Kami dapat memperbarui kebijakan ini. Perubahan akan diposting di halaman ini dengan tanggal pembaruan yang baru. Anda disarankan meninjau secara berkala.</p>
         )
-    },
-     {
-        id: 9, title: "9. Kontak Kami", content: (
-             <p>Jika ada pertanyaan mengenai kebijakan privasi ini, silakan hubungi kami di: <a href={`mailto:${contactEmail}`} className="text-indigo-600 dark:text-indigo-400 hover:underline">{contactEmail}</a></p>
-        )
     }
-    // Tambahkan section lain jika perlu
   ];
 
   return (
@@ -167,11 +161,6 @@ function PrivacyPage() {
           </AccordionItem>
         ))}
       </div>
-
-      {/* Ingat untuk mengganti konten placeholder dengan kebijakan privasi Anda yang sebenarnya */}
-      <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-8 italic">
-         Dokumen ini adalah contoh dan perlu disesuaikan oleh profesional hukum.
-      </p>
 
     </motion.div>
   );
