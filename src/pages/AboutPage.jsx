@@ -30,8 +30,8 @@ function AboutPage() {
           <img
             src={yourGifPath} // <-- Gunakan path GIF Anda
             alt="Demonstrasi Cara Kerja urlDikit" // Deskripsi gambar
-            className="w-full h-auto rounded-lg object-contain shadow-md" // Styling gambar
-            style={{ maxHeight: '400px' }} // Batasi tinggi max jika perlu
+            //className="w-full h-auto rounded-lg object-contain shadow-md" // Styling gambar
+        className="w-full h-auto rounded-lg mb-4 sm:mb-0 shadow-md"
           />
         </div>
 
