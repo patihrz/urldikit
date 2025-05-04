@@ -79,7 +79,7 @@ function HowToUsePage() {
   const howToUseSteps = [
     { id: 1, icon: LinkIcon, title: "1. Masukkan URL Panjang", content: <p>Tempel (paste) URL lengkap yang ingin Anda pendekkan ke kolom input utama.</p> },
     { id: 2, icon: AtSign, title: "2. (Opsional) Alias Kustom", content: <p>Ketik alias (6-10 karakter: huruf, angka, `_`, `-`) di kolom kedua jika ingin nama link khusus. Jika kosong/tidak valid, kode acak akan dibuat.</p> },
-    { id: 3, icon: null, title: "3. Klik 'Shorten URL'", content: <p>Tekan tombol "Shorten URL" untuk memproses permintaan Anda.</p> }, // Contoh tanpa ikon
+    { id: 3, icon: Alert, title: "3. Klik 'Shorten URL'", content: <p>Tekan tombol "Shorten URL" untuk memproses permintaan Anda.</p> }, // Contoh tanpa ikon
     { id: 4, icon: Copy, title: "4. Salin Hasil", content: <p>URL pendek akan muncul. Gunakan tombol copy di sebelahnya untuk menyalin dengan mudah.</p> },
     { id: 5, icon: QrCode, title: "5. Gunakan QR Code", content: <p>QR Code juga akan tampil bersama hasil URL pendek, siap untuk Anda scan atau simpan.</p> },
     { id: 6, icon: BarChart3, title: "6. Cek Statistik", content: <p>Kunjungi halaman "Check Stats" (<RouterLink to="/pages/stats" className='text-indigo-600 dark:text-indigo-400 hover:underline'>link di sini</RouterLink>) dan masukkan URL pendek atau kodenya untuk melihat jumlah klik.</p> },
@@ -121,10 +121,6 @@ function HowToUsePage() {
                 </div>
            )}
         </div>
-         {/* Disclaimer iframe */}
-         <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-3 italic">
-            Penting: Video hanya akan tampil jika Anda mengganti nilai `youtubeEmbedIframeCode` dengan kode embed yang valid dari halaman YouTube.
-         </p>
       </motion.section>
 
       {/* Bagian Panduan Teks (Akordeon) */}
