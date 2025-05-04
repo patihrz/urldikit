@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; // Import useState
 import { motion, AnimatePresence } from 'framer-motion';
 // Import ikon yang relevan + ChevronDown untuk akordeon
-import { ChevronDown, Link as LinkIcon, AtSign, Copy, QrCode, BarChart3, AlertTriangle, Send } from 'lucide-react';
+import { ChevronDown, Link as LinkIcon, AtSign, Copy, QrCode, BarChart3, AlertCircle, AlertTriangle, Send } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom'; // Rename Link from react-router
 
 // Komponen kecil untuk satu item akordeon
@@ -79,7 +79,7 @@ function HowToUsePage() {
   const howToUseSteps = [
     { id: 1, icon: LinkIcon, title: "1. Masukkan URL Panjang", content: <p>Tempel (paste) URL lengkap yang ingin Anda pendekkan ke kolom input utama.</p> },
     { id: 2, icon: AtSign, title: "2. (Opsional) Alias Kustom", content: <p>Ketik alias (6-10 karakter: huruf, angka, `_`, `-`) di kolom kedua jika ingin nama link khusus. Jika kosong/tidak valid, kode acak akan dibuat.</p> },
-    { id: 3, icon: Alert, title: "3. Klik 'Shorten URL'", content: <p>Tekan tombol "Shorten URL" untuk memproses permintaan Anda.</p> }, // Contoh tanpa ikon
+    { id: 3, icon: AlertCircle, title: "3. Klik 'Shorten URL'", content: <p>Tekan tombol "Shorten URL" untuk memproses permintaan Anda.</p> },
     { id: 4, icon: Copy, title: "4. Salin Hasil", content: <p>URL pendek akan muncul. Gunakan tombol copy di sebelahnya untuk menyalin dengan mudah.</p> },
     { id: 5, icon: QrCode, title: "5. Gunakan QR Code", content: <p>QR Code juga akan tampil bersama hasil URL pendek, siap untuk Anda scan atau simpan.</p> },
     { id: 6, icon: BarChart3, title: "6. Cek Statistik", content: <p>Kunjungi halaman "Check Stats" (<RouterLink to="/pages/stats" className='text-indigo-600 dark:text-indigo-400 hover:underline'>link di sini</RouterLink>) dan masukkan URL pendek atau kodenya untuk melihat jumlah klik.</p> },
