@@ -13,7 +13,7 @@ function AboutPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="w-full max-w-4xl lg:max-w-5xl px-4" // Container utama
+      className="w-full max-w-2xl lg:max-w-3xl px-4" // Container utama
     >
       <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-gray-800 dark:text-white">
         Tentang urlDikit
@@ -36,7 +36,7 @@ function AboutPage() {
         {/* === KOLOM TEKS DESKRIPSI (Lebar 2/5) === */}
         <div className="w-full md:w-2/5 text-gray-700 dark:text-gray-300 space-y-4"> {/* <-- LEBAR DIUBAH ke 2/5 */}
           <p className="text-lg leading-relaxed">
-            Selamat datang di <strong>urlDikit</strong>! Solusi cerdas Anda untuk mengubah alamat web yang panjang dan rumit menjadi tautan pendek yang **ringkas, mudah diingat, dan siap dibagikan**.
+            Selamat datang di <strong>urlDikit</strong>! Solusi cerdas Anda untuk mengubah alamat web yang panjang dan rumit menjadi tautan pendek yang ringkas, mudah diingat, dan siap dibagikan.
           </p>
           <p>
             Lupakan kerumitan URL panjang saat berbagi di media sosial, email, atau pesan. Dengan antarmuka yang bersih dan proses yang cepat, {`urlDikit`} membantu Anda fokus pada pesan yang ingin Anda sampaikan.
