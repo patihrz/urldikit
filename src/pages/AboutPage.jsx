@@ -20,20 +20,21 @@ function AboutPage() {
       </h1>
 
       {/* Container Card Utama */}
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 lg:gap-12 bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
+      {/* === PERUBAHAN: items-start -> items-center === */}
+      <div className="flex flex-col md:flex-row md:items-center gap-8 lg:gap-12 bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700">
 
-        {/* === KOLOM GAMBAR GIF (Lebar 2/3) === */}
-        <div className="w-full md:w-2/3 flex-shrink-0"> {/* <-- LEBAR DIUBAH */}
+        {/* === KOLOM GAMBAR GIF (Lebar 3/5) === */}
+        <div className="w-full md:w-3/5 flex-shrink-0"> {/* <-- LEBAR DIUBAH ke 3/5 */}
           <img
             src={yourGifPath}
             alt="Demonstrasi Cara Kerja urlDikit"
             className="w-full h-auto rounded-lg" // Shadow sudah dihapus
           />
         </div>
-        {/* =================================== */}
+        {/* ==================================== */}
 
-        {/* === KOLOM TEKS DESKRIPSI (Lebar 1/3) === */}
-        <div className="w-full md:w-1/3 text-gray-700 dark:text-gray-300 space-y-4"> {/* <-- LEBAR DIUBAH */}
+        {/* === KOLOM TEKS DESKRIPSI (Lebar 2/5) === */}
+        <div className="w-full md:w-2/5 text-gray-700 dark:text-gray-300 space-y-4"> {/* <-- LEBAR DIUBAH ke 2/5 */}
           <p className="text-lg leading-relaxed">
             Selamat datang di <strong>urlDikit</strong>! Solusi cerdas Anda untuk mengubah alamat web yang panjang dan rumit menjadi tautan pendek yang **ringkas, mudah diingat, dan siap dibagikan**.
           </p>
