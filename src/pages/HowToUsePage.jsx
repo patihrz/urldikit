@@ -1,5 +1,3 @@
-// src/pages/HowToUsePage.jsx
-
 import React, { useState } from 'react'; // Import useState
 import { motion, AnimatePresence } from 'framer-motion';
 // Import ikon yang relevan + ChevronDown untuk akordeon
@@ -17,7 +15,7 @@ function AccordionItem({ id, title, icon: Icon, children, isOpen, onClick }) {
         aria-controls={`content-htu-${id}`}
       >
         <span className='flex items-center'>
-           {Icon && <Icon className="h-5 w-5 mr-3 text-indigo-500 flex-shrink-0"/>}
+           {Icon && <Icon className="h-5 w-5 mr-3 text-indigo-500 flex-shrink-0"/>} {/* Tampilkan ikon jika ada */}
            {title}
         </span>
         <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
@@ -39,7 +37,8 @@ function AccordionItem({ id, title, icon: Icon, children, isOpen, onClick }) {
             transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
             className="px-4 sm:px-6 pb-4 overflow-hidden" // Beri padding horizontal & bawah
           >
-            <div className="text-sm text-gray-600 dark:text-gray-400 pl-8 pr-4 leading-relaxed border-l-2 border-indigo-100 dark:border-indigo-900/50"> {/* Sedikit indentasi dgn border kiri */}
+             {/* Styling konten di dalam akordeon */}
+            <div className="text-sm text-gray-600 dark:text-gray-400 pl-8 pr-4 leading-relaxed border-l-2 border-indigo-100 dark:border-indigo-900/50">
                  {children}
             </div>
           </motion.section>
@@ -55,9 +54,10 @@ function HowToUsePage() {
   const serviceName = "urlDikit";
   const contactPagePath = "/pages/contact"; // Pastikan path benar
 
-  // === PASTI GANTI SRC DI BAWAH INI DENGAN KODE EMBED ASLI DARI YOUTUBE ===
-  const youtubeEmbedIframeCode = `<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Contoh Video YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`; // CONTOH SRC VALID
-  // =====================================================================
+  // == Kode iframe Anda DITARUH DI SINI ==
+  // INGAT: Ganti nilai src="..." dengan KODE EMBED ASLI dari YouTube!
+  const youtubeEmbedIframeCode = `<iframe width="560" height="315" src="https://www.youtube.com/embed/sKadMQnx6Bo?si=nVd2Fnw9HOhOr-E9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
+  // ========================================
 
   // Fungsi untuk membersihkan dan menambahkan class responsif ke iframe
   const processIframe = (iframeString) => {
@@ -77,11 +77,11 @@ function HowToUsePage() {
 
   // Data langkah-langkah penggunaan
   const howToUseSteps = [
-    { id: 1, icon: LinkIcon, title: "1. Masukkan URL Panjang", content: <p>Tempel (paste) URL lengkap yang ingin Anda pendekkan ke dalam kolom input utama.</p> },
+    { id: 1, icon: LinkIcon, title: "1. Masukkan URL Panjang", content: <p>Tempel (paste) URL lengkap yang ingin Anda pendekkan ke kolom input utama.</p> },
     { id: 2, icon: AtSign, title: "2. (Opsional) Alias Kustom", content: <p>Ketik alias (6-10 karakter: huruf, angka, `_`, `-`) di kolom kedua jika ingin nama link khusus. Jika kosong/tidak valid, kode acak akan dibuat.</p> },
-    { id: 3, icon: null, title: "3. Klik 'Shorten URL'", content: <p>Tekan tombol "Shorten URL" untuk memproses permintaan Anda.</p> },
+    { id: 3, icon: null, title: "3. Klik 'Shorten URL'", content: <p>Tekan tombol "Shorten URL" untuk memproses permintaan Anda.</p> }, // Contoh tanpa ikon
     { id: 4, icon: Copy, title: "4. Salin Hasil", content: <p>URL pendek akan muncul. Gunakan tombol copy di sebelahnya untuk menyalin dengan mudah.</p> },
-    { id: 5, icon: QrCode, title: "5. Gunakan QR Code", content: <p>QR Code juga akan tampil bersama hasil URL pendek, siap untuk di-scan atau disimpan.</p> },
+    { id: 5, icon: QrCode, title: "5. Gunakan QR Code", content: <p>QR Code juga akan tampil bersama hasil URL pendek, siap untuk Anda scan atau simpan.</p> },
     { id: 6, icon: BarChart3, title: "6. Cek Statistik", content: <p>Kunjungi halaman "Check Stats" (<RouterLink to="/pages/stats" className='text-indigo-600 dark:text-indigo-400 hover:underline'>link di sini</RouterLink>) dan masukkan URL pendek atau kodenya untuk melihat jumlah klik.</p> },
     { id: 7, icon: AlertTriangle, title: "7. Laporkan URL", content: <p>Temukan link {serviceName} yang mencurigakan? Laporkan melalui link "Report Malicious URL" (<RouterLink to="/pages/report" className='text-indigo-600 dark:text-indigo-400 hover:underline'>link di sini</RouterLink>) di Footer.</p> }
   ];
@@ -110,8 +110,10 @@ function HowToUsePage() {
            style={{ paddingBottom: '56.25%' /* Rasio 16:9 */ }}
          >
            {responsiveIframeHtml ? (
+                // Gunakan dangerouslySetInnerHTML untuk merender string HTML iframe
                 <div dangerouslySetInnerHTML={{ __html: responsiveIframeHtml }} />
            ) : (
+                // Fallback jika iframe kosong/salah
                 <div className="absolute top-0 left-0 w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                      <p className="text-gray-500 dark:text-gray-400 text-center p-4">
                        Video tidak tersedia. Pastikan kode embed dari YouTube sudah benar.
@@ -119,6 +121,10 @@ function HowToUsePage() {
                 </div>
            )}
         </div>
+         {/* Disclaimer iframe */}
+         <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-3 italic">
+            Penting: Video hanya akan tampil jika Anda mengganti nilai `youtubeEmbedIframeCode` dengan kode embed yang valid dari halaman YouTube.
+         </p>
       </motion.section>
 
       {/* Bagian Panduan Teks (Akordeon) */}
@@ -126,6 +132,7 @@ function HowToUsePage() {
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
       >
         <h2 className="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Panduan Teks</h2>
+        {/* Container Akordeon */}
         <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
           {howToUseSteps.map((step, index) => (
             <AccordionItem
@@ -140,12 +147,7 @@ function HowToUsePage() {
             </AccordionItem>
           ))}
         </div>
-      </section>
-
-       {/* Disclaimer iframe */}
-      <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-8 italic">
-         Penting: Ganti nilai `youtubeEmbedIframeCode` dengan kode embed yang valid dari halaman YouTube agar video tutorial bisa tampil.
-      </p>
+      </motion.section>
 
     </motion.div>
   );
