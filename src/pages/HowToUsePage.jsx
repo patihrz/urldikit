@@ -1,57 +1,89 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Link as LinkIcon, AtSign, Copy, QrCode, BarChart3, AlertTriangle, Send } from 'lucide-react';
-import { Link as RouterLink } from 'react-router-dom';
+// src/pages/HowToUsePage.jsx
 
-// Komponen Akordeon
+import React, { useState } from 'react'; // Import useState
+import { motion, AnimatePresence } from 'framer-motion';
+// Import ikon yang relevan + ChevronDown untuk akordeon
+import { ChevronDown, Link as LinkIcon, AtSign, Copy, QrCode, BarChart3, AlertTriangle, Send } from 'lucide-react';
+import { Link as RouterLink } from 'react-router-dom'; // Rename Link from react-router
+
+// Komponen kecil untuk satu item akordeon
 function AccordionItem({ id, title, icon: Icon, children, isOpen, onClick }) {
-  // ... (Kode komponen AccordionItem tetap sama seperti sebelumnya) ...
   return (
-    <div className="border-b border-gray-200 dark:border-gray-700 overflow-hidden">
-      <button onClick={onClick} className="flex justify-between items-center w-full py-4 px-1 text-left text-lg font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700/50 focus:outline-none transition-colors" aria-expanded={isOpen} aria-controls={`content-htu-${id}`}>
-        <span className='flex items-center'> {Icon && <Icon className="h-5 w-5 mr-3 text-indigo-500 flex-shrink-0"/>} {title} </span>
-        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}> <ChevronDown size={20} /> </motion.div>
+    <div className="border-b border-gray-200 dark:border-gray-700 overflow-hidden last:border-b-0"> {/* Hapus border bawah di item terakhir */}
+      <button
+        onClick={onClick}
+        className="flex justify-between items-center w-full py-4 px-4 sm:px-6 text-left text-base sm:text-lg font-semibold text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700/50 focus:outline-none transition-colors" // Sesuaikan padding/fontsize
+        aria-expanded={isOpen}
+        aria-controls={`content-htu-${id}`}
+      >
+        <span className='flex items-center'>
+           {Icon && <Icon className="h-5 w-5 mr-3 text-indigo-500 flex-shrink-0"/>}
+           {title}
+        </span>
+        <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.2 }}>
+          <ChevronDown size={20} />
+        </motion.div>
       </button>
-      <AnimatePresence initial={false}> {isOpen && ( <motion.section key="content" id={`content-htu-${id}`} initial="collapsed" animate="open" exit="collapsed" variants={{ open: { opacity: 1, height: 'auto', marginTop: '0.5rem', marginBottom: '1rem' }, collapsed: { opacity: 0, height: 0, marginTop: 0, marginBottom: 0 } }} transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }} className="px-1 pb-4 overflow-hidden" > <div className="text-sm text-gray-600 dark:text-gray-400 pl-8 pr-4 leading-relaxed"> {children} </div> </motion.section> )} </AnimatePresence>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.section
+            key="content"
+            id={`content-htu-${id}`}
+            initial="collapsed"
+            animate="open"
+            exit="collapsed"
+            variants={{
+              open: { opacity: 1, height: 'auto', marginTop: '0.5rem', marginBottom: '1rem' },
+              collapsed: { opacity: 0, height: 0, marginTop: 0, marginBottom: 0 }
+            }}
+            transition={{ duration: 0.3, ease: [0.04, 0.62, 0.23, 0.98] }}
+            className="px-4 sm:px-6 pb-4 overflow-hidden" // Beri padding horizontal & bawah
+          >
+            <div className="text-sm text-gray-600 dark:text-gray-400 pl-8 pr-4 leading-relaxed border-l-2 border-indigo-100 dark:border-indigo-900/50"> {/* Sedikit indentasi dgn border kiri */}
+                 {children}
+            </div>
+          </motion.section>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
 
+
 // Halaman How To Use
 function HowToUsePage() {
   const serviceName = "urlDikit";
-  const contactPagePath = "/pages/contact";
+  const contactPagePath = "/pages/contact"; // Pastikan path benar
 
-  // === KODE IFRAME ANDA DIMASUKKAN KE SINI ===
-  // INGAT: Ganti nilai src="..." dengan KODE EMBED ASLI dari YouTube!
-  const youtubeEmbedIframeCode = `<iframe width="560" height="315" src="https://www.youtube.com/embed/sKadMQnx6Bo?si=02LQdPxsUb1IUQGt&controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-  // ========================================
+  // === PASTI GANTI SRC DI BAWAH INI DENGAN KODE EMBED ASLI DARI YOUTUBE ===
+  const youtubeEmbedIframeCode = `<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Contoh Video YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`; // CONTOH SRC VALID
+  // =====================================================================
 
   // Fungsi untuk membersihkan dan menambahkan class responsif ke iframe
   const processIframe = (iframeString) => {
     if (!iframeString || typeof iframeString !== 'string') return '';
     let cleanedIframe = iframeString
-      .replace(/width="\d+"/, '')
-      .replace(/height="\d+"/, '')
-      .replace('<iframe', '<iframe class="absolute top-0 left-0 w-full h-full"');
+      .replace(/width="[^"]*"/, '') // Hapus atribut width
+      .replace(/height="[^"]*"/, '') // Hapus atribut height
+      .replace('<iframe', '<iframe class="absolute top-0 left-0 w-full h-full"'); // Tambah class responsif
     return cleanedIframe;
   };
 
   const responsiveIframeHtml = processIframe(youtubeEmbedIframeCode);
 
-  // State akordeon
-  const [openIndex, setOpenIndex] = useState(0); // Item pertama terbuka
+  // State untuk akordeon
+  const [openIndex, setOpenIndex] = useState(0); // Buka item pertama by default
   const handleToggle = (index) => { setOpenIndex(openIndex === index ? null : index); };
 
-  // Data langkah-langkah
+  // Data langkah-langkah penggunaan
   const howToUseSteps = [
-    { id: 1, icon: LinkIcon, title: "1. Masukkan URL Panjang", content: <p>Tempel (paste) URL lengkap yang ingin Anda pendekkan ke kolom input utama.</p> },
-    { id: 2, icon: AtSign, title: "2. (Opsional) Alias Kustom", content: <p>Ketik alias (6-10 karakter: huruf, angka, `_`, `-`) di kolom kedua jika ingin nama link khusus.</p> },
-    { id: 3, icon: null, title: "3. Klik 'Shorten URL'", content: <p>Tekan tombol untuk memproses URL Anda.</p> },
-    { id: 4, icon: Copy, title: "4. Salin Hasil", content: <p>URL pendek akan muncul beserta tombol 'Copy' untuk menyalinnya.</p> },
-    { id: 5, icon: QrCode, title: "5. Gunakan QR Code", content: <p>QR Code juga akan tampil, siap untuk di-scan atau disimpan.</p> },
-    { id: 6, icon: BarChart3, title: "6. Cek Statistik", content: <p>Kunjungi halaman "Check Stats" untuk melihat jumlah klik link pendek Anda.</p> },
-    { id: 7, icon: AlertTriangle, title: "7. Laporkan URL", content: <p>Temukan link {serviceName} yang mencurigakan? Laporkan via link "Report Malicious URL" di Footer.</p> }
+    { id: 1, icon: LinkIcon, title: "1. Masukkan URL Panjang", content: <p>Tempel (paste) URL lengkap yang ingin Anda pendekkan ke dalam kolom input utama.</p> },
+    { id: 2, icon: AtSign, title: "2. (Opsional) Alias Kustom", content: <p>Ketik alias (6-10 karakter: huruf, angka, `_`, `-`) di kolom kedua jika ingin nama link khusus. Jika kosong/tidak valid, kode acak akan dibuat.</p> },
+    { id: 3, icon: null, title: "3. Klik 'Shorten URL'", content: <p>Tekan tombol "Shorten URL" untuk memproses permintaan Anda.</p> },
+    { id: 4, icon: Copy, title: "4. Salin Hasil", content: <p>URL pendek akan muncul. Gunakan tombol copy di sebelahnya untuk menyalin dengan mudah.</p> },
+    { id: 5, icon: QrCode, title: "5. Gunakan QR Code", content: <p>QR Code juga akan tampil bersama hasil URL pendek, siap untuk di-scan atau disimpan.</p> },
+    { id: 6, icon: BarChart3, title: "6. Cek Statistik", content: <p>Kunjungi halaman "Check Stats" (<RouterLink to="/pages/stats" className='text-indigo-600 dark:text-indigo-400 hover:underline'>link di sini</RouterLink>) dan masukkan URL pendek atau kodenya untuk melihat jumlah klik.</p> },
+    { id: 7, icon: AlertTriangle, title: "7. Laporkan URL", content: <p>Temukan link {serviceName} yang mencurigakan? Laporkan melalui link "Report Malicious URL" (<RouterLink to="/pages/report" className='text-indigo-600 dark:text-indigo-400 hover:underline'>link di sini</RouterLink>) di Footer.</p> }
   ];
 
 
@@ -62,7 +94,7 @@ function HowToUsePage() {
       exit={{ opacity: 0 }}
       className="w-full max-w-4xl px-4" // Container utama halaman
     >
-      <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-center text-gray-800 dark:text-white">
+      <h1 className="text-3xl sm:text-4xl font-bold mb-10 text-center text-gray-800 dark:text-white">
         Cara Menggunakan {serviceName}
       </h1>
 
@@ -77,12 +109,9 @@ function HowToUsePage() {
            className="relative overflow-hidden rounded-lg shadow-lg border dark:border-gray-700 bg-black" // bg-black sbg fallback
            style={{ paddingBottom: '56.25%' /* Rasio 16:9 */ }}
          >
-           {/* Render iframe */}
            {responsiveIframeHtml ? (
-                // Gunakan dangerouslySetInnerHTML untuk merender string HTML iframe
                 <div dangerouslySetInnerHTML={{ __html: responsiveIframeHtml }} />
            ) : (
-                // Fallback jika iframe kosong/salah
                 <div className="absolute top-0 left-0 w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
                      <p className="text-gray-500 dark:text-gray-400 text-center p-4">
                        Video tidak tersedia. Pastikan kode embed dari YouTube sudah benar.
@@ -115,7 +144,7 @@ function HowToUsePage() {
 
        {/* Disclaimer iframe */}
       <p className="text-xs text-center text-gray-500 dark:text-gray-400 mt-8 italic">
-         Penting: Video di atas hanya akan tampil jika Anda mengganti nilai `youtubeEmbedIframeCode` dengan kode embed yang valid dari halaman YouTube.
+         Penting: Ganti nilai `youtubeEmbedIframeCode` dengan kode embed yang valid dari halaman YouTube agar video tutorial bisa tampil.
       </p>
 
     </motion.div>
