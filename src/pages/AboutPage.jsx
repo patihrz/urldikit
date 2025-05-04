@@ -13,7 +13,7 @@ function AboutPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="w-full max-w-2xl lg:max-w-2xl px-4" // Container utama
+      className="w-full max-w-4xl lg:max-w-2xl px-4" // Container utama
     >
       <h1 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-gray-800 dark:text-white">
         Tentang urlDikit
