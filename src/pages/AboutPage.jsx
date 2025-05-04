@@ -20,43 +20,38 @@ function AboutPage() {
         Tentang {serviceName}
       </h1>
 
-      {/* Container Flexbox Utama untuk Gambar & Kolom Teks Card */}
-      {/* Tidak ada background/padding/shadow di sini */}
+      {/* Container Flex Utama untuk Gambar & Kolom Teks Card */}
       <div className="flex flex-col md:flex-row items-center gap-8 lg:gap-12">
 
-        {/* === KOLOM GAMBAR GIF (Lebar 3/5, Tanpa Card/Shadow) === */}
-        <div className="w-full md:w-3/5 order-2 md:order-1"> {/* Gambar ambil 60% lebar di layar md */}
+        {/* === KOLOM GAMBAR GIF (Urutan diperbaiki) === */}
+        {/* order-1 (default, untuk mobile), md:order-1 (untuk md ke atas, tetap kiri) */}
+        <div className="w-full md:w-3/5 order-1 md:order-1"> {/* <-- PERBAIKAN ORDER */}
           <motion.img
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            src={yourGifPath} // <-- Path GIF Anda
+            initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
+            src={yourGifPath}
             alt="Demo urlDikit"
-            className="w-full h-auto rounded-lg" // Tanpa shadow, rounded opsional
+            className="w-full h-auto rounded-lg" // Tanpa shadow
           />
         </div>
-        {/* ================================================ */}
+        {/* ========================================== */}
 
-        {/* === KOLOM TEKS (Lebar 2/5, Dalam Card Terpisah) === */}
-        <div className="w-full md:w-2/5 order-1 md:order-2"> {/* Teks ambil 40% lebar di layar md */}
-          {/* Styling Card HANYA diterapkan di sini */}
+        {/* === KOLOM TEKS (Urutan diperbaiki) === */}
+        {/* order-2 (default, untuk mobile), md:order-2 (untuk md ke atas, tetap kanan) */}
+        <div className="w-full md:w-2/5 order-2 md:order-2"> {/* <-- PERBAIKAN ORDER */}
           <motion.div
-             initial={{ opacity: 0, x: 50 }}
-             animate={{ opacity: 1, x: 0 }}
-             transition={{ duration: 0.5, delay: 0.4 }}
-             className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 space-y-4 h-full" // Tambah h-full jika ingin tingginya sama
+             initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.4 }}
+             className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 space-y-4 h-full"
           >
             <h2 className="text-2xl lg:text-3xl font-semibold text-gray-800 dark:text-white mb-3">
               Ringkas, Cepat, Efisien.
             </h2>
-            <p className="text-base lg:text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-              <strong>{serviceName}</strong> adalah solusi modern untuk kebutuhan pemendekan URL Anda. Ubah link panjang menjadi pendek, rapi, dan siap dibagikan.
+            <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
+              <strong>{serviceName}</strong> hadir sebagai solusi modern untuk kebutuhan pemendekan URL Anda... (dst)
             </p>
             <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-              Fokus pada pesan Anda, biarkan kami urus kerumitan linknya!
+              Fokus pada pesan Anda... Kami menyediakan fitur-fitur berikut:
             </p>
-
-            {/* Fitur Andalan (sebagai list biasa di dalam card) */}
+            {/* Fitur Andalan */}
             <div className="pt-4 border-t dark:border-gray-600">
                <h3 className="text-lg font-semibold mb-2">Fitur Andalan:</h3>
                <ul className="list-disc list-inside space-y-1 pl-4 text-sm">
@@ -67,7 +62,6 @@ function AboutPage() {
                  <li>Pelaporan Link</li>
                </ul>
             </div>
-
              {/* Link Kontak */}
              <div className="pt-4 border-t dark:border-gray-700">
                  <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
@@ -79,7 +73,7 @@ function AboutPage() {
              </div>
           </motion.div> {/* Akhir Card Teks */}
         </div>
-        {/* ======================================= */}
+        {/* ================================== */}
 
       </div>
     </motion.div> // Akhir Container Halaman
