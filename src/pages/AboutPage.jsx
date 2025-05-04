@@ -8,7 +8,7 @@ function AboutPage() {
   // const techStack = ["React", "Vite", "Node.js", ...];
 
   // --- GANTI PATH INI DENGAN PATH KE FILE GIF ANDA DI FOLDER PUBLIC ---
-  const yourGifPath = "/images/urldikitt.gif"; // Contoh jika nama file Anda urldikit-demo.gif di public/images/
+  const yourGifPath = "/images/urldkt.gif"; // Contoh jika nama file Anda urldikit-demo.gif di public/images/
   // -----------------------------------------------------------------
 
   return (
