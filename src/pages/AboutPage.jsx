@@ -46,10 +46,10 @@ function AboutPage() {
               Ringkas, Cepat, Efisien.
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-3">
-              <strong>{serviceName}</strong> hadir sebagai solusi modern untuk kebutuhan pemendekan URL Anda... (dst)
+              <strong>{serviceName}</strong> hadir sebagai solusi modern untuk kebutuhan pemendekan URL Anda.
             </p>
             <p className="text-base text-gray-600 dark:text-gray-400 leading-relaxed">
-              Fokus pada pesan Anda... Kami menyediakan fitur-fitur berikut:
+                Kami menyediakan fitur-fitur berikut:
             </p>
             {/* Fitur Andalan */}
             <div className="pt-4 border-t dark:border-gray-600">
