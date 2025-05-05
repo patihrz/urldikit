@@ -5,6 +5,7 @@ import { Toaster } from 'react-hot-toast';
 // Import komponen-komponen yang dibutuhkan
 import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar'; // Pastikan Navbar diimpor
+import DonationReminder from './components/DonationReminder';
 import HomePage from './pages/HomePage';
 import AdminLoginPage from './pages/AdminLoginPage';
 import ReportPage from './pages/ReportPage';
@@ -14,7 +15,7 @@ import PrivacyPage from './pages/PrivacyPage';
 import ContactPage from './pages/ContactPage';
 import StatsPage from './pages/StatsPage';
 import AboutPage from './pages/AboutPage';
-
+import DonationPage from './pages/DonationPage';
 import PartnershipPage from './pages/PartnershipPage';
 
 import HowToUsePage from './pages/HowToUsePage';
@@ -44,9 +45,12 @@ function Layout() {
           <a href="/pages/how-to-use" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">How To Use</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
         </div>
         <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
-          &copy; {new Date().getFullYear()} urlDikit. | V 1.0.
+
+          &copy; {new Date().getFullYear()} urlDikit. | V1.5.
+
         </p>
       </footer>
+      <DonationReminder />
     </div>
   );
 }
@@ -72,7 +76,7 @@ function App() {
         <Route path="pages/about" element={<AboutPage />} />     {/* path: /pages/about */}
         <Route path="pages/how-to-use" element={<HowToUsePage />} />
         <Route path="pages/partnership" element={<PartnershipPage />} />
-        {/* Rute Admin (Tetap tanpa /pages/ agar mudah diakses) */}
+        <Route path="pages/donation" element={<DonationPage />} />
         <Route path="admin/login" element={<AdminLoginPage />} /> {/* path: /admin/login */}
         <Route
           path="admin" // path: /admin
