@@ -99,7 +99,7 @@ function StatsPage() {
       </motion.h1>
       {/* Deskripsi (Dianimasikan sebagai item) */}
       <motion.p variants={itemVariants} className="text-center text-sm text-gray-600 dark:text-gray-400 mb-8">
-        Enter the short URL (e.g., /abcde12) or just the code (6-10 characters) to see its click count.
+      Enter the short URL (e.g., {typeof window !== 'undefined' ? window.location.origin : 'domain.com'}/abcde12) or just the code (6-10 characters) to see its click count.
       </motion.p>
 
       {/* Form Input (Dianimasikan sebagai item) */}
