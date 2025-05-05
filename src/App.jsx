@@ -42,7 +42,6 @@ function Layout() {
           <a href="/pages/terms" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">Terms of Service</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
           <a href="/pages/privacy" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">Privacy Policy</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
           <a href="/pages/contact" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">Contact</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
-          <a href="/pages/how-to-use" className="hover:text-gray-800 dark:hover:text-white hover:underline transition-colors duration-200">How To Use</a> <span className="opacity-50 select-none" aria-hidden="true">|</span>
         </div>
         <p className="mt-4 text-xs text-gray-400 dark:text-gray-500">
 
