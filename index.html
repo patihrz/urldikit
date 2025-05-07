@@ -2,32 +2,74 @@
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
+
+    {/* --- Favicon & Ikon Aplikasi --- */}
     <link rel="icon" type="image/png" href="/assets/logo.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" /> {/* Buat file apple-touch-icon.png 180x180 di public/assets */}
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" /> {/* Buat file favicon.ico (multi-ukuran) di public */}
+    {/* <link rel="manifest" href="/site.webmanifest" /> */} {/* Untuk PWA, jika nanti dikembangkan */}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#6366F1" /> {/* Warna tema (contoh: Indigo, sesuaikan) */}
 
-    <title>urlDikit - Pemendek URL Simpel & Cepat</title>
-
-    <meta name="description" content="Pendekkan URL panjang dengan mudah dan cepat menggunakan urlDikit. Buat link kustom, lacak statistik klik. Gratis dan simpel." />
-    <meta name="keywords" content="url shortener, pemendek url, link shortener, url dikit, perpendek link, url custom, link custom, gratis" />
-
+    {/* --- Judul & Deskripsi Utama (SEO) --- */}
+    <title>urlDikit - Pemendek URL Simpel, Cepat, & Gratis</title>
+    <meta name="description" content="Pendekkan URL panjang dengan mudah menggunakan urlDikit. Buat link kustom yang mudah diingat, lacak statistik klik, dan dapatkan QR code. Layanan gratis dan simpel!" />
+    <meta name="keywords" content="url shortener, pemendek url, link shortener, url dikit, perpendek link, url custom, link custom, gratis, qr code, statistik link" />
     <link rel="canonical" href="https://urldikit.my.id/" />
 
+    {/* --- Open Graph Tags (Facebook, LinkedIn, dll.) --- */}
     <meta property="og:title" content="urlDikit - Pemendek URL Simpel & Cepat" />
-    <meta property="og:description" content="Pendekkan URL panjang dengan mudah dan cepat menggunakan urlDikit." />
+    <meta property="og:description" content="Ubah link panjang jadi pendek dan mudah dibagikan dengan urlDikit. Fitur alias kustom dan QR code tersedia!" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://urldikit.my.id/" />
-    <meta property="og:image" content="https://urldikit.my.id/assets/logo.png" />
+    <meta property="og:image" content="https://urldikit.my.id/assets/og-image.png" /> {/* Buat gambar khusus untuk OG, ukuran ideal 1200x630px, taruh di public/assets */}
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="urlDikit" />
+    {/* <meta property="og:locale" content="id_ID" />  */}
 
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="urlDikit - Pemendek URL Simpel & Cepat" />
-    <meta name="twitter:description" content="Pendekkan URL panjang dengan mudah dan cepat menggunakan urlDikit." />
-    <meta name="twitter:image" content="https://urldikit.my.id/assets/logo.png" />
+    {/* --- Twitter Card Tags --- */}
+    <meta name="twitter:card" content="summary_large_image" /> {/* summary_large_image agar gambar lebih besar */}
+    <meta name="twitter:title" content="urlDikit - Pemendek URL Cepat & Gratis" />
+    <meta name="twitter:description" content="Pendekkan link panjang jadi simpel dengan urlDikit. Mudah, cepat, dan gratis!" />
+    <meta name="twitter:image" content="https://urldikit.my.id/assets/twitter-card-image.png" /> {/* Buat gambar khusus untuk Twitter Card, ukuran ideal misal 800x418px */}
+    {/* <meta name="twitter:site" content="@usernameTwitterAnda" /> */} {/* Jika punya akun Twitter */}
+
+    {/* --- Schema.org Markup (JSON-LD) untuk WebApplication --- */}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "urlDikit",
+      "url": "https://urldikit.my.id/",
+      "applicationCategory": "ProductivityApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires HTML5 compatible browser",
+      "description": "Layanan pemendek URL gratis yang simpel dan cepat dengan fitur alias kustom dan QR code.",
+      "featureList": [
+        "URL Shortening",
+        "Custom Aliases",
+        "QR Code Generation",
+        "Click Statistics",
+        "Malicious URL Reporting"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "IDR"
+      },
+      "screenshot": "https://urldikit.my.id/assets/screenshot-urldikit.png" // URL ke screenshot utama aplikasi Anda
+    }
+    </script>
+
+    {/* Preconnect ke domain penting (jika ada, misal Google Fonts atau CDN lain) */}
+    {/* <link rel="preconnect" href="https://fonts.googleapis.com"> */}
+    {/* <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> */}
 
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script> 
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
